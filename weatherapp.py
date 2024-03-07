@@ -6,6 +6,8 @@ BOT_TOKEN = '7004165241:AAEINcsXbHR67RNYPuygPkfm2JAfRErl3Es'
 API_KEY = 'eaa7ae462493aaf974882e3683aaa449'
 WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
+# SILKA: https://t.me/MyFristBotFristBotFristBot_bot
+
 bot = telebot.TeleBot(BOT_TOKEN)
 translator = Translator()
 
@@ -39,9 +41,10 @@ def get_weather_info(city):
         icon_code = data['weather'][0]['icon']
         icon_url = f"http://openweathermap.org/img/wn/{icon_code}.png"
         weather_icon = get_weather_icon(weather_id)
+        dc = translator.translate(weather_desc.capitalize(),dest='uz')
         weather_info = (
             f"Shahar: {city_name}\n"
-            f"Ob-Havo: {weather_desc.capitalize()} {weather_icon}\n"
+            f"Ob-Havo: {dc.text} {weather_icon}\n"
             f"Harorat: {temperature}°C\n"
             f"his qilish: {feels_like}°C"
         )
