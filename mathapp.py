@@ -47,6 +47,7 @@ def ask_question(message):
         question_count += 1
     else:
         bot.send_message(message.chat.id, f"O'yin tugadi. Jami to'plangan ballar: {total_points}")
+        bot.send_message(message.chat.id, f"Qayta o'ynashni xoxlasangiz /start ni bosing!!!")
 
 def check_answer(message, correct_answer):
     global total_points
